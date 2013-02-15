@@ -1,1 +1,1 @@
-<a href="https://github.com/kirka121/CST8285_Webdev">Source code to this page - GitHub</a>
+<a href="https://github.com/kirka121/CST8285_Webdev" target="_blank">Source code to website - GitHub</a>
