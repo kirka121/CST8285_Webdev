@@ -123,6 +123,7 @@
 									include("modules/login_form.php"); 
 								} else {
 									echo("no db connection. login disabled. sowwy");
+									$no_db = true;
 								}
 								?>
 							</td>
@@ -151,18 +152,20 @@
 		<div id="footer">
     		Katata Networks © 2013 All rights reserved.  <!--<img src="assets/images/valid-html40.gif"> -->
     		<?php
-    		$a_u = $database->num_active_users;
-    		$a_g = $database->num_active_guests;
-			echo " | Members Total: ".$database->getNumMembers();
-			echo " | There ";
-				if($a_u == 1){echo"is";}else{echo"are";}
-			echo " $a_u ";
-				if($a_u == 1){echo"member";}else{echo"members";}
-			echo " and ";
-			echo "$a_g ";
-				if($a_g == 1){echo"guest";}else{echo"guests";}
-			echo " viewing the site.";
-			//include("includes/login/include/view_active.php");  <-- lists all logged in active users, by username
+	    		if($no_db){
+		    		$a_u = $database->num_active_users;
+		    		$a_g = $database->num_active_guests;
+					echo " | Members Total: ".$database->getNumMembers();
+					echo " | There ";
+						if($a_u == 1){echo"is";}else{echo"are";}
+					echo " $a_u ";
+						if($a_u == 1){echo"member";}else{echo"members";}
+					echo " and ";
+					echo "$a_g ";
+						if($a_g == 1){echo"guest";}else{echo"guests";}
+					echo " viewing the site.";
+					//include("includes/login/include/view_active.php");  <-- lists all logged in active users, by username
+				}
 			?>
 		</div>
 	</body>
