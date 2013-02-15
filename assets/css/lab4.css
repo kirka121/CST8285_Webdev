@@ -1,0 +1,21 @@
+table.lab4 {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#FFFFFF;
+	border-width: 1px;
+	border-color: #999999;
+	border-collapse: collapse;
+	margin: 0 auto;
+}
+table.lab4 th {
+	border-width: 0px;
+	border-style: solid;
+	border-color: #999999;
+	text-align: left;
+}
+table.lab4 td {
+	border-width: 0px;
+	border-style: solid;
+	border-color: #999999;
+	text-align: left;
+}

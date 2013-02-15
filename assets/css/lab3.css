@@ -1,0 +1,53 @@
+table.main_table {
+	font-family: verdana,arial,sans-serif;
+	font-size:11px;
+	color:#333333;
+	border-width: 1px;
+	border-color: #999999;
+	border-collapse: collapse;
+	margin: 0 auto;
+}
+table.main_table th {
+	background:#b5cfd2 url('/assets/images/cell-blue.jpg');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+}
+table.main_table td {
+	background:#dcddc0 url('/assets/images/cell-grey.jpg');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+	text-align: center;
+}
+table.main_table td.left{
+	background:#dcddc0 url('/assets/images/cell-grey.jpg');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+	text-align: left;
+	font-weight: bold;
+}
+table.main_table td.lab{
+	background:#dcddc0 url('/assets/images/cell-lab.jpg');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+	text-align: center;
+}
+table.main_table td.lecture{
+	background:#dcddc0 url('/assets/images/cell-lecture.jpg');
+	border-width: 1px;
+	padding: 8px;
+	border-style: solid;
+	border-color: #999999;
+	text-align: center;
+}
+table td.left{
+	text-align: left;
+	margin-left: 10px;
+}

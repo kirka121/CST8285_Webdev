@@ -1,0 +1,150 @@
+body{
+	color: #FFFFFF;
+	text-align: center;
+	font-family: calibri;
+	background-image: url("/assets/images/pattern.jpg");
+	background-color: #000000;
+	margin: 0px;
+	padding: 0px;
+}
+body:before {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background: -webkit-radial-gradient(top center, ellipse cover, rgba(44,105,107,0.2) 0%,rgba(4,10,10,0.4) 80%);
+}	
+table.links {
+	text-align: center;
+	margin-left: 0 auto;
+	margin-right: 0 auto;
+}
+tr.links{
+}
+td.links{
+	text-align: center;
+	width: 80px;
+}
+td.centered{
+	text-align: center;
+	margin-left: 0 auto;
+	margin-right: 0 auto;
+}
+a{
+	color: #FFFFFF;
+    -webkit-transition: color 0.4s ease;
+    -moz-transition: color 0.4s ease;
+    -o-transition: color 0.4s ease;
+    transition: color 0.4s ease;
+}
+a:hover{
+	color: #4af0e2;
+}
+h1{
+	font-family: calibri;
+	font-weight: normal;
+	font-size: 46px;
+}
+#container{
+	vertical-align: top;
+	margin-top: 10px;
+	width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+    border-collapse: separate;
+    border-radius: 10px;
+    border: 1px solid;
+}
+#photo_container {
+	width: 960px;
+	height: 400px;
+	background-color: #000;
+}
+#header{
+	width: 100%;
+	border-collapse: collapse;
+}
+#logo_box{
+	width: 150px;
+}
+#page_title{
+	text-align: center;
+}
+#footer{
+	padding: 20px;
+	background-color:rgba(0,0,0,0.6);
+	color: #fff;
+	font-size: 12px;
+}
+#error{
+	color: #b56b47;
+}
+#left_container{
+	vertical-align: top;
+}
+#right_container{
+	width: 100%;
+	text-align: center;
+	margin-left: 0 auto;
+	margin-right: 0 auto;
+}
+#login_table{
+	vertical-align: top;
+	margin-top: 10px;
+	width: 220px;
+	margin-left: auto;
+	margin-right: auto;
+    border-collapse: separate;
+    border-radius: 8px;
+    border: 1px solid;
+}
+#login_table_title{
+	background-color: #ffffff;
+	height: 20px;
+	color: #000000;
+	border-collapse: separate;
+    border-radius: 6px;
+    font-weight: bold;
+}
+#align_left{
+	text-align: left;
+}
+#align_center{
+	text-align: center;
+	margin-left: 0 auto;
+	margin-right: 0 auto;
+}
+
+ul{
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+
+#drop_down {
+}
+
+#drop_down ul li {
+	display: inline-table;
+	float: none;
+}
+#drop_down ul li a, #drop_down ul ul li a{
+	display: block;
+	white-space: nowrap;
+}
+
+#drop_down ul li:hover {
+}
+
+#drop_down ul ul {
+	position: fixed;
+	display: none;
+	z-index: 2;
+}
+#drop_down ul li:hover ul {
+	display: block;
+	margin-top: -40px;
+}
