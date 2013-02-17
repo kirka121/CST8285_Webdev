@@ -4,21 +4,34 @@
  *
  * This file is intended to group all constants to
  * make it easier for the site administrator to tweak
- * the login script.
- *
- * Please subscribe to our feeds at http://blog.geotitles.com for more such tutorials
  */
  
-/**
- * Database Constants - these constants are required
- * in order for there to be a successful connection
- * to the MySQL database. Make sure the information is
- * correct.
- */
-define("DB_SERVER", "localhost");
-define("DB_USER", "website");//enter your database username
-define("DB_PASS", "9doggy9");//databse password
-define("DB_NAME", "katata_web");//database name
+ if(getenv("VCAP_SERVICES")){
+ 	//if in webserver
+	$services_json = json_decode(getenv("VCAP_SERVICES"),true);
+	$mysql_config = $services_json["mysql-5.1"][0]["credentials"];
+	$username = $mysql_config["username"];
+	$password = $mysql_config["password"];
+	$hostname = $mysql_config["hostname"];
+	$port = $mysql_config["port"];
+	$db = $mysql_config["name"];
+	/**
+	 * Database Constants - these constants are required
+	 * in order for there to be a successful connection
+	 * to the MySQL database. Make sure the information is
+	 * correct.
+	 */
+	define("DB_SERVER", "$hostname");
+	define("DB_USER", "$username");//enter your database username
+	define("DB_PASS", "$password");//databse password
+	define("DB_NAME", "$db");//database name
+} else {
+	//if in local development
+	define("DB_SERVER", "localhost");
+	define("DB_USER", "website");//enter your database username
+	define("DB_PASS", "9doggy9");//databse password
+	define("DB_NAME", "katata_web");//database name
+}
 
 /**
  * Database Table Constants - these constants
@@ -39,7 +52,7 @@ define("TBL_BANNED_USERS",  "Banned_Users");
  * also add additional level specifications.
  * Levels must be digits between 0-9.
  */
-define("ADMIN_NAME", "admin");
+define("ADMIN_NAME", "Kirka");
 define("GUEST_NAME", "Guest");
 define("ADMIN_LEVEL", 9);
 define("USER_LEVEL",  1);

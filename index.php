@@ -1,3 +1,7 @@
+<?php
+$no_db = false;
+?>
+
 <!doctype html>
 <html>
 	<head>
@@ -7,6 +11,7 @@
 		<link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon"> 
 		<link rel="stylesheet" type="text/css" media="screen" href="assets/css/index.css">
 		<link rel="stylesheet" href="includes/jQuery.isc/jQuery.isc.css" type="text/css" media="screen" charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="includes/jFormer/jformer.css" ></link>
 		<?php 
 			if(isset($_GET['op'])){
 				$op = $_GET['op'];
@@ -19,6 +24,7 @@
 		<script>google.load("jquery", "1");</script>
 		<script src="includes/jQuery.isc/jquery-image-scale-carousel.js" type="text/javascript" charset="utf-8"></script>
 		<script src="includes/jquery.ez-pinned-footer.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="includes/jFormer/jFormer-uncompressed.js" ></script>
 		<script type="text/javascript">
 			//jquery source from local if CDN no work
 			if (typeof jQuery == 'undefined'){
@@ -75,7 +81,7 @@
 							<td class="center">
 								<table class="links">
 									<tr class="links">
-										<td class="links"><a class="menu" href="index.php?op=index">Home</a></td><td> | </td>
+										<td class="links"><a class="menu" href="index.php">Home</a></td><td> | </td>
 										<td class="links"><a class="menu" href="index.php?op=about">About Me</a></td><td> | </td>
 										<td class="links"><a class="menu" href="index.php?op=register">Register</a></td><td> | </td>
 										<td class="links"><a class="menu" href="index.php?op=downloads">Downloads</a></td><td> | </td>
@@ -104,7 +110,7 @@
 											</div>
 										</td>
 										
-										<td> | </td><td class="links"><a class="menu" href="index.php">Placeholder</a></td>
+										<td> | </td><td class="links"><a class="menu" href="index.php?op=testing">Test</a></td>
 										<td> | </td><td class="links"><a class="menu" href="index.php">Placeholder</a></td>
 										<td> | </td><td class="links"><a class="menu" href="index.php">Placeholder</a></td>
 									</tr>
@@ -118,7 +124,7 @@
 							<td id="left_container">
 								<?php
 								include_once("includes/login/include/constants.php");
-								error_reporting(0);
+								error_reporting(E_ALL);
 								if(mysql_connect(DB_SERVER, DB_USER, DB_PASS)){
 									include("modules/login_form.php"); 
 								} else {
@@ -152,7 +158,7 @@
 		<div id="footer">
     		Katata Networks © 2013 All rights reserved.  <!--<img src="assets/images/valid-html40.gif"> -->
     		<?php
-	    		if($no_db){
+	    		if($no_db == false){
 		    		$a_u = $database->num_active_users;
 		    		$a_g = $database->num_active_guests;
 					echo " | Members Total: ".$database->getNumMembers();
