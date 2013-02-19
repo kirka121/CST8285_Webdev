@@ -1,0 +1,11 @@
+table.links {
+	text-align: center;
+	margin-left: 0 auto;
+	margin-right: 0 auto;
+}
+tr.links{
+}
+td.links{
+	text-align: center;
+	width: 80px;
+}

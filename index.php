@@ -24,7 +24,7 @@ $no_db = false;
 		<script>google.load("jquery", "1");</script>
 		<script src="includes/jQuery.isc/jquery-image-scale-carousel.js" type="text/javascript" charset="utf-8"></script>
 		<script src="includes/jquery.ez-pinned-footer.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript" src="includes/jFormer/jFormer-uncompressed.js" ></script>
+		<script type="text/javascript" src="includes/jFormer/jFormer.js" ></script>
 		<script type="text/javascript">
 			//jquery source from local if CDN no work
 			if (typeof jQuery == 'undefined'){
@@ -80,7 +80,7 @@ $no_db = false;
 						<tr>
 							<td class="center">
 								<table class="links">
-									<tr class="links">
+									<tr>
 										<td class="links"><a class="menu" href="index.php">Home</a></td><td> | </td>
 										<td class="links"><a class="menu" href="index.php?op=about">About Me</a></td><td> | </td>
 										<td class="links"><a class="menu" href="index.php?op=register">Register</a></td><td> | </td>

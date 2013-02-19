@@ -3,9 +3,9 @@ This is a general development and testing website.
 Live example; http://http://kirka.aws.af.cm/
 
 Technologies used;
-- php 5.2
+- php 5.4.6
 - jquery 1.7.2
-- mysql 5.6
+- mysql 5.5.27
 
 
 Code and Tutorials included;
@@ -14,7 +14,5 @@ Code and Tutorials included;
 - jFormer form framework: http://www.jformer.com
 
 Development:
-easyphp 12.1
-
-Production:
-Appfog
+- local: easyphp 12.1
+- hosted: Appfog http://appfog.com/

@@ -8,7 +8,7 @@
  *
  * Please subscribe to our feeds at http://blog.geotitles.com for more such tutorials
  */
-include("../include/session.php");
+include("includes/login/include/session.php");
 
 class AdminProcess
 {

@@ -1,31 +1,5 @@
-<script type="text/javascript" src="includes/jFormer/JFormerUtility.js"></script>
-<script type="text/javascript" src="includes/jFormer/JFormer.js"></script>
-<script type="text/javascript" src="includes/jFormer/JFormComponent.js"></script>
-<script type="text/javascript" src="includes/jFormer/JFormComponentAddress.js"></script>
-<script type="text/javascript" src="includes/jFormer/JFormComponentCreditCard.js"></script>
-<script type="text/javascript" src="includes/jFormer/JFormComponentDate.js"></script>
-<script type="text/javascript" src="includes/jFormer/JFormComponentDropDown.js"></script>
-<script type="text/javascript" src="includes/jFormer/JFormComponentFile.js"></script>
-<script type="text/javascript" src="includes/jFormer/JFormComponentHidden.js"></script>
-<script type="text/javascript" src="includes/jFormer/JFormComponentLikert.js"></script>
-<script type="text/javascript" src="includes/jFormer/JFormComponentLikertStatement.js"></script>
-<script type="text/javascript" src="includes/jFormer/JFormComponentMultipleChoice.js"></script>
-<script type="text/javascript" src="includes/jFormer/JFormComponentName.js"></script>
-<script type="text/javascript" src="includes/jFormer/JFormComponentSingleLineText.js"></script>
-<script type="text/javascript" src="includes/jFormer/JFormComponentTextArea.js"></script>
-<script type="text/javascript" src="includes/jFormer/JFormPage.js"></script>
-<script type="text/javascript" src="includes/jFormer/JFormSection.js"></script>
-<script type="text/javascript" src="includes/jFormer/JFormerDatePicker.js"></script>
-<script type="text/javascript" src="includes/jFormer/JFormerMask.js"></script>
-<script type="text/javascript" src="includes/jFormer/JFormerScroller.js"></script>
-<script type="text/javascript" src="includes/jFormer/JFormerTip.js"></script>
-
-   <div id="testing">
-
-   <?php 
-   require_once("includes/jFormer/jFormer.php");
-
-   // Create the form
+<?php
+// Include the jFormer PHP (use an good path in your code)
 if(file_exists('../php/JFormer.php')) {
     require_once('../php/JFormer.php');
 }
@@ -98,5 +72,3 @@ function onSubmit($formValues) {
 // Process any request to the form
 $loginForm->processRequest();
 ?>
-
-</div>

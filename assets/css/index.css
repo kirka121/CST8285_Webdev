@@ -22,16 +22,26 @@ table.links {
 	margin-left: 0 auto;
 	margin-right: 0 auto;
 }
-tr.links{
-}
 td.links{
 	text-align: center;
 	width: 80px;
 }
-td.centered{
+table.alinks {
+	border: 1px solid;
 	text-align: center;
 	margin-left: 0 auto;
 	margin-right: 0 auto;
+}
+td.alinks{
+	
+	text-align: center;
+	font-size: small;
+	width: 100px;
+}
+td.centered{
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
 }
 a{
 	color: #FFFFFF;
@@ -87,13 +97,9 @@ h1{
 }
 #right_container{
 	width: 100%;
-	text-align: center;
-	margin-left: 0 auto;
-	margin-right: 0 auto;
 }
 #login_table{
 	vertical-align: top;
-	margin-top: 10px;
 	width: 220px;
 	margin-left: auto;
 	margin-right: auto;

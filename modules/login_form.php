@@ -1,6 +1,5 @@
-<!-- - - - - - - - - - - - - - - - - - - - - - - - - -->
 <?php
-		include("includes/login/include/session.php");
+		include_once("includes/login/include/session.php");
 ?>
 <table>
 	<tr>
@@ -14,21 +13,9 @@
 								<td colspan="2" id="login_table_title">
 									<?php echo "<b>$session->username</b> - Online"; ?>
 								</td>
-							</tr>
-								<td id="align_left">
-									<?php echo "<a class='menu' href=\"index.php?op=userinfo&user=$session->username\">My Account</a>"; ?>
-								</td>
-								<td id="align_left">
-									<?php
-									   	if($session->isAdmin()){
-									      	echo "<a class='menu' href=\"includes/login/admin/admin.php\">Admin Center</a>";
-									   	}
-								   	?>
-								</td>
-							</tr>
 							<tr>
 								<td id="align_left">
-							    	<?php echo "<a class='menu' href=\"index.php?op=useredit\">Edit Account</a>"; ?>
+							    	<?php echo "<a class='menu' href=\"index.php?op=control_panel\">Control Panel</a>"; ?>
 								</td>
 								<td id="align_left">
 								   	<?php echo "<a class='menu' href=\"includes/login/process.php\">Logout</a>";	?>
