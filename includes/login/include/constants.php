@@ -38,10 +38,11 @@
  * hold the names of all the database tables used
  * in the script.
  */
-define("TBL_USERS", "Users");
-define("TBL_ACTIVE_USERS",  "Active_Users");
-define("TBL_ACTIVE_GUESTS", "Active_Guests");
-define("TBL_BANNED_USERS",  "Banned_Users");
+define("TBL_USERS", "users");
+define("TBL_ACTIVE_USERS",  "active_users");
+define("TBL_ACTIVE_GUESTS", "active_guests");
+define("TBL_BANNED_USERS",  "banned_users");
+define("TBL_SETTINGS",  "settings");
 
 /**
  * Special Names and Level Constants - the admin

@@ -1,12 +1,21 @@
 <?php
+include_once("includes/login/include/constants.php");
+error_reporting(E_ALL);
 $no_db = false;
+
+$connection = mysql_connect(DB_SERVER, DB_USER, DB_PASS) or die(mysql_error());
+mysql_select_db(DB_NAME, $connection) or die(mysql_error());
+$q = "SELECT * FROM settings";
+$result = mysql_query($q, $connection);
+$dbarray = mysql_fetch_array($result);
+mysql_close($connection);
 ?>
 
 <!doctype html>
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>Katata Networks - learning jQuery - Kyryl Afanasenko</title>
+		<title><?php echo $dbarray['site_title']; ?></title>
 		<link rel="icon" href="assets/images/favicon.ico" type="image/x-icon"> 
 		<link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon"> 
 		<link rel="stylesheet" type="text/css" media="screen" href="assets/css/index.css">
@@ -73,8 +82,8 @@ $no_db = false;
 					<table id="header">
 						<tr>
 							<td id="logo_box" rowspan="2"><a href="index.php"><img src="assets/images/logo.png"></a></td>
-							<td id="page_title"><h1>
-								Katata Networks 
+							<td id="page_name"><h1>
+								<?php echo $dbarray['site_name']; ?>
 							</h1></td>
 						</tr>
 						<tr>
@@ -123,8 +132,6 @@ $no_db = false;
 						<tr>
 							<td id="left_container">
 								<?php
-								include_once("includes/login/include/constants.php");
-								error_reporting(E_ALL);
 								if(mysql_connect(DB_SERVER, DB_USER, DB_PASS)){
 									include("modules/login_form.php"); 
 								} else {
@@ -156,7 +163,7 @@ $no_db = false;
 		<br />
 		</div>
 		<div id="footer">
-    		Katata Networks © 2013 All rights reserved.  <!--<img src="assets/images/valid-html40.gif"> -->
+    		<?php echo $dbarray['copyright']; ?>  <!--<img src="assets/images/valid-html40.gif"> -->
     		<?php
 	    		if($no_db == false){
 		    		$a_u = $database->num_active_users;

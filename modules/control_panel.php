@@ -4,15 +4,15 @@ if($session->isAdmin()){
 <table class="alinks">
 	<tr>
 		<td id="align_left" colspan="100%">
-			Admin panel:
+			Admin panel: <b><?php echo $session->username; ?></b> is logged in.
 		</td>
 	</tr>
 	<tr>
+		<td class="alinks"><a href="index.php?op=control_panel&page=general">General</a></td><td> | </td>
 	    <td class="alinks"><a href="index.php?op=control_panel&page=stats">List Users</a></td><td> | </td>
 	    <td class="alinks"><a href="index.php?op=control_panel&page=users">Manage Users</a></td><td> | </td>
-	    <td class="alinks"><a href="index.php?op=control_panel">Manage Pages</a></td><td> | </td>
-	    <td class="alinks"><a href="index.php?op=control_panel">Manage Pictures</a></td><td> | </td>
-	    <td class="alinks"><a href="index.php?op=control_panel">Placeholder</a></td>
+	    <td class="alinks"><a href="index.php?op=control_panel&page=manage_pages">Manage Pages</a></td><td> | </td>
+	    <td class="alinks"><a href="index.php?op=control_panel">Manage Pictures</a></td>
 	</tr>
 </table>
 <br />
@@ -30,7 +30,7 @@ if($session->isAdmin()){
 	    <td class="alinks"><a href="index.php?op=control_panel">Placeholder</a></td><td> | </td>
 	    <td class="alinks"><a href="index.php?op=control_panel">Placeholder</a></td>
 	</tr>
-</table>
+</table><br/>
 <?php
 
 if($session->isAdmin()){
