@@ -1,6 +1,3 @@
-<?php
-		include_once("includes/login/include/session.php");
-?>
 <table>
 	<tr>
   		<td>
@@ -26,7 +23,7 @@
 				} else {
 					//user logged out
 					if($form->num_errors > 0){
-					   echo "<font size=\"2\" color=\"#ff0000\">".$form->num_errors." error(s) found</font>";
+					   echo "<font size=\"small\" color=\"#ff0000\">".$form->num_errors." error(s) found</font>";
 					}
 					?>
 						<form action="includes/login/process.php" method="post" name="login_request">

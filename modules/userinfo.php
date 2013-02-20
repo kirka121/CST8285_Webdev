@@ -7,7 +7,6 @@
  *
  * Please subscribe to our feeds at http://blog.geotitles.com for more such tutorials
  */
-include_once("includes/login/include/session.php");
 
 /* Requested Username error checking */
 if(isset($_GET['user'])){

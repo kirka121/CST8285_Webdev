@@ -1,9 +1,9 @@
 <?php
    
-$connection = mysql_connect(DB_SERVER, DB_USER, DB_PASS) or die(mysql_error());
-mysql_select_db(DB_NAME, $connection) or die(mysql_error());
+$connection_gr = mysql_connect(DB_SERVER, DB_USER, DB_PASS) or die(mysql_error());
+mysql_select_db(DB_NAME, $connection_gr) or die(mysql_error());
 $q = "SELECT * FROM settings";
-$result = mysql_query($q, $connection);
+$result = mysql_query($q, $connection_gr);
 $dbarray = mysql_fetch_array($result);
 
 if(isset($_POST['edit_site_settings'])){
@@ -13,10 +13,10 @@ if(isset($_POST['edit_site_settings'])){
 		$cpg = 0;
 	}
 	$k = "UPDATE settings SET site_title = '".$_POST['s_title']."', site_name = '".$_POST['s_name']."', copyright='".$_POST['s_copyright']."', custom_pages = '".$cpg."' WHERE site_id=1";
-	if(mysql_query($k, $connection)) {echo"success";}else {echo"failure";}
+	if(mysql_query($k, $connection_gr)) {echo"success";}else {echo"failure";}
 }
 
-mysql_close($connection);
+mysql_close($connection_gr);
 ?>
 <form action="" method="post">
 	<table class="edit_data">

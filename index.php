@@ -1,13 +1,23 @@
 <?php
-include_once("includes/login/include/constants.php");
+include_once("includes/login/include/session.php"); 
 error_reporting(E_ALL);
-$no_db = false;
 
 $connection = mysql_connect(DB_SERVER, DB_USER, DB_PASS) or die(mysql_error());
 mysql_select_db(DB_NAME, $connection) or die(mysql_error());
 $q = "SELECT * FROM settings";
 $result = mysql_query($q, $connection);
 $dbarray = mysql_fetch_array($result);
+
+$q = "SELECT * FROM pages";
+$result = mysql_query($q, $connection);
+$num_rows = mysql_num_rows($result);
+
+for($i = 1; $i <= $num_rows; $i++){
+	$q = "SELECT * FROM pages WHERE page_id = ".$i;
+	$result = mysql_query($q, $connection);
+	$pgarray[$i] = mysql_fetch_array($result);
+}
+
 mysql_close($connection);
 ?>
 
@@ -98,7 +108,7 @@ mysql_close($connection);
 										<td class="links">
 											<div id="drop_down">
 												<ul>
-													<li  class="parent">
+													<li class="parent">
 														<a href="#">Labs</a>
 														<ul>
 															<li>
@@ -118,10 +128,28 @@ mysql_close($connection);
 												</ul>
 											</div>
 										</td>
-										
 										<td> | </td><td class="links"><a class="menu" href="index.php?op=testing">Test</a></td>
-										<td> | </td><td class="links"><a class="menu" href="index.php">Placeholder</a></td>
-										<td> | </td><td class="links"><a class="menu" href="index.php">Placeholder</a></td>
+										<?php if($dbarray['custom_pages']==1){ ?>
+											<td> | </td>
+											<td class="links">
+												<div id="drop_down">
+													<ul>
+														<li class="parent">
+															<a href="#">Custom Pages</a>
+															<ul>
+																<?php for($i = 1; $i <=$num_rows; $i++){ 
+																		if($pgarray[$i]['is_visible']==1){ ?>
+																			<li>
+																				<a href='index.php?op=custom_page&page=<?php echo $pgarray[$i]['page_id']; ?>'><?php echo $pgarray[$i]['page_title']; ?></a>
+																			</li>
+																<?php 	}
+																	} ?>
+															</ul>
+														</li>
+													</ul>
+												</div>
+											</td>
+										<?php }?>
 									</tr>
 								</table>
 							</td>
@@ -132,17 +160,11 @@ mysql_close($connection);
 						<tr>
 							<td id="left_container">
 								<?php
-								if(mysql_connect(DB_SERVER, DB_USER, DB_PASS)){
 									include("modules/login_form.php"); 
-								} else {
-									echo("no db connection. login disabled. sowwy");
-									$no_db = true;
-								}
 								?>
 							</td>
 							<td id="right_container">
-								<!-- inner container include. -->
-								 <?php
+								<?php
 									if (!isset($_GET['op'])) { 
 										include("modules/index.php"); 
 									} else {
@@ -153,7 +175,7 @@ mysql_close($connection);
 											echo ("<div id='error'>Module could not be found!<br/></div>");
 								      	}
 									} 
-								 ?>
+								?>
 							</td>
 						</tr>
 					</table>
@@ -165,20 +187,18 @@ mysql_close($connection);
 		<div id="footer">
     		<?php echo $dbarray['copyright']; ?>  <!--<img src="assets/images/valid-html40.gif"> -->
     		<?php
-	    		if($no_db == false){
-		    		$a_u = $database->num_active_users;
-		    		$a_g = $database->num_active_guests;
-					echo " | Members Total: ".$database->getNumMembers();
-					echo " | There ";
-						if($a_u == 1){echo"is";}else{echo"are";}
-					echo " $a_u ";
-						if($a_u == 1){echo"member";}else{echo"members";}
-					echo " and ";
-					echo "$a_g ";
-						if($a_g == 1){echo"guest";}else{echo"guests";}
-					echo " viewing the site.";
-					//include("includes/login/include/view_active.php");  <-- lists all logged in active users, by username
-				}
+	    		$a_u = $database->num_active_users;
+	    		$a_g = $database->num_active_guests;
+				echo " | Members Total: ".$database->getNumMembers();
+				echo " | There ";
+					if($a_u == 1){echo"is";}else{echo"are";}
+				echo " $a_u ";
+					if($a_u == 1){echo"member";}else{echo"members";}
+				echo " and ";
+				echo "$a_g ";
+					if($a_g == 1){echo"guest";}else{echo"guests";}
+				echo " viewing the site.";
+				//include("includes/login/include/view_active.php");  <-- lists all logged in active users, by username
 			?>
 		</div>
 	</body>

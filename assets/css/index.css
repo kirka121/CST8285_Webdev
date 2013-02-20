@@ -54,6 +54,14 @@ td.centered{
 	margin-left: auto;
 	margin-right: auto;
 }
+table.display_data{
+	width: 100%;
+	border: 0px solid;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
 a{
 	color: #FFFFFF;
     -webkit-transition: color 0.4s ease;

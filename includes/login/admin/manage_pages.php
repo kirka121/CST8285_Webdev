@@ -1,15 +1,15 @@
 <?php
    
-$connection = mysql_connect(DB_SERVER, DB_USER, DB_PASS) or die(mysql_error());
-mysql_select_db(DB_NAME, $connection) or die(mysql_error());
+$connection_pg = mysql_connect(DB_SERVER, DB_USER, DB_PASS) or die(mysql_error());
+mysql_select_db(DB_NAME, $connection_pg) or die(mysql_error());
 $num_rows = mysql_num_rows($result);
 $q = "SELECT * FROM pages";
-$result = mysql_query($q, $connection);
+$result = mysql_query($q, $connection_pg);
 $num_rows = mysql_num_rows($result);
 
 for($i = 1; $i <= $num_rows; $i++){
 	$q = "SELECT * FROM pages WHERE page_id = ".$i;
-	$result = mysql_query($q, $connection);
+	$result = mysql_query($q, $connection_pg);
 	$dbarray[$i] = mysql_fetch_array($result);
 }
 
@@ -21,7 +21,7 @@ if(isset($_POST['edit_site_page'])){
 		$vbl = 0;
 	}
 	$q = "UPDATE pages SET page_title = '".$_POST['page_title']."', page_content = '".$_POST['page_content']."', date_modified = '".date('Y-m-d h:m:s')."', modified_by = '".$session->username."', is_visible = '".$vbl."' WHERE page_id='".$_POST['edit_site_page']."'";
-	if(mysql_query($q, $connection)){echo"success";} else {echo"failure";}
+	if(mysql_query($q, $connection_pg)){echo"success";} else {echo"failure";}
 }
 
 if(isset($_POST['add_site_page'])){
@@ -31,15 +31,15 @@ if(isset($_POST['add_site_page'])){
 		$vbl = 0;
 	}
 	$q = "INSERT INTO pages SET page_title = '".$_POST['page_title']."', page_content = '".$_POST['page_content']."', date_created = '".date('Y-m-d h:m:s')."', author = '".$session->username."', is_visible = '".$vbl."', page_id = '".$_POST['add_site_page']."'";
-	if(mysql_query($q, $connection)){echo"success";} else {echo"failure";}
+	if(mysql_query($q, $connection_pg)){echo"success";} else {echo"failure";}
 }
 
 if(isset($_POST['delete_this_page'])){
 	$q = "DELETE FROM pages WHERE page_id=".$_POST['delete_this_page'];
-	if(mysql_query($q, $connection)){echo"success";} else {echo"failure";}
+	if(mysql_query($q, $connection_pg)){echo"success";} else {echo"failure";}
 }
 
-mysql_close($connection);
+mysql_close($connection_pg);
 ?>
 
 

@@ -190,7 +190,7 @@ class MySQLDB
       if($this->num_members < 0){
          $q = "SELECT * FROM ".TBL_USERS;
          $result = mysql_query($q, $this->connection);
-         $this->num_members = mysql_numrows($result);
+         $this->num_members = mysql_num_rows($result);
       }
       return $this->num_members;
    }
