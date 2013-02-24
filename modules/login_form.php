@@ -10,6 +10,7 @@
 								<td colspan="2" id="login_table_title">
 									<?php echo "<b>$session->username</b> - Online"; ?>
 								</td>
+							</tr>
 							<tr>
 								<td id="align_left">
 							    	<?php echo "<a class='menu' href=\"index.php?op=control_panel\">Control Panel</a>"; ?>

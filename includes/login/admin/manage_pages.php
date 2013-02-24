@@ -2,7 +2,6 @@
    
 $connection_pg = mysql_connect(DB_SERVER, DB_USER, DB_PASS) or die(mysql_error());
 mysql_select_db(DB_NAME, $connection_pg) or die(mysql_error());
-$num_rows = mysql_num_rows($result);
 $q = "SELECT * FROM pages";
 $result = mysql_query($q, $connection_pg);
 $num_rows = mysql_num_rows($result);

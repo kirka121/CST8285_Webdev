@@ -47,7 +47,7 @@ mysql_close($connection);
 		<script type="text/javascript">
 			//jquery source from local if CDN no work
 			if (typeof jQuery == 'undefined'){
-				document.write(unescape("%3Cscript src='includes/jquery-1.9.0.js' type='text/javascript'%3e%3C/script%3E"));
+				document.write(unescape("%3Cscript src='includes/jQuery.js' type='text/javascript'%3e%3C/script%3E"));
 			}
 		
 			$(document).ready(function(){
@@ -155,7 +155,7 @@ mysql_close($connection);
 							</td>
 						</tr>
 					</table>
-					<div id="photo_container"></div>
+					 <div id="photo_container"></div> 
 					<table>
 						<tr>
 							<td id="left_container">
